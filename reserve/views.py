@@ -1,3 +1,4 @@
+from django.conf import settings
 from django.shortcuts import render
 from django.http.response import HttpResponse, HttpResponseRedirect
 from django.http.request import HttpRequest
@@ -23,6 +24,7 @@ def search_restaurant(request: HttpRequest):
             context = {
                 'restaurants': restaurants,
                 'search_term': restaurant_name,
+                'media_url': settings.MEDIA_URL,
             }
             return render(request, 'reserve/search_restaurant_results.html', context)
     else:

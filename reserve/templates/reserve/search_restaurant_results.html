@@ -9,7 +9,7 @@
             <li>Description: {{ restaurant.description }}</li>
             <li>Address: {{ restaurant.address }}</li>
             <li>Rating: {{ restaurant.rating }}</li>
-            <li>Image: {{ restaurant.image }}</li>
+            <li>Image: <img src="{{ media_url }}{{ restaurant.image }}" ma></li>
         </ul>
         {% endfor %}
     </ul>
