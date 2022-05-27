@@ -28,6 +28,12 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+ADMINS = [
+    ('admin', 'admin@example.com'),
+]
+
+GOOGLE_API_KEY = os.getenv('GOOGLE_API_KEY')
+
 
 # Application definition
 
@@ -38,6 +44,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'reserve',
+    # 'address',
 ]
 
 MIDDLEWARE = [

@@ -1,4 +1,7 @@
 data/
+docker-compose.yml
+.vscode/
+*/migrations/*
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
