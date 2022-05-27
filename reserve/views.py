@@ -16,19 +16,18 @@ def index(request: HttpRequest):
 
 
 def search_restaurant(request: HttpRequest):
-    if request.method == 'POST':
-        form = SearchRestaurantForm(request.POST)
-        if form.is_valid():
-            restaurant_name = form.cleaned_data['name']
-            restaurants = Restaurant.objects.filter(name__icontains=restaurant_name)
-            context = {
-                'restaurants': restaurants,
-                'search_term': restaurant_name,
-                'media_url': settings.MEDIA_URL,
-            }
-            return render(request, 'reserve/search_restaurant_results.html', context)
+    form = SearchRestaurantForm(request.GET)        
+    if form.is_valid():
+        restaurant_name = form.cleaned_data['name']
+        restaurants = Restaurant.objects.filter(name__icontains=restaurant_name)
+        context = {
+            'restaurants': restaurants,
+            'search_term': restaurant_name,
+            'media_url': settings.MEDIA_URL,
+        }
+        return render(request, 'reserve/search_restaurant_results.html', context)
     else:
-        return HttpResponseRedirect(redirect_to='reserve.index')
+        return HttpResponseRedirect(redirect_to='/')
 
 
 def create_restaurant(request: HttpRequest):
