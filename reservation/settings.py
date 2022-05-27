@@ -28,12 +28,6 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
-ADMINS = [
-    ('admin', 'admin@example.com'),
-]
-
-GOOGLE_API_KEY = os.getenv('GOOGLE_API_KEY')
-
 
 # Application definition
 
@@ -136,3 +130,17 @@ STATIC_URL = '/static/'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# Own configs
+
+ADMINS = [
+    ('admin', 'admin@example.com'),
+]
+
+GOOGLE_API_KEY = os.getenv('GOOGLE_API_KEY')
+
+# Base url to serve media files
+MEDIA_URL = '/media/'
+
+# Path where media is stored
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')

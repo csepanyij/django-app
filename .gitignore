@@ -2,6 +2,7 @@ data/
 docker-compose.yml
 .vscode/
 */migrations/*
+media/
 
 # Byte-compiled / optimized / DLL files
 __pycache__/

@@ -13,6 +13,6 @@ class Restaurant(models.Model):
 
     name = models.CharField(max_length=512, blank=False)
     address = models.CharField(max_length=512, blank=False)
-    rating = models.IntegerField(default=Rating.BAD, choices=Rating.choices)
+    rating = models.IntegerField(default=Rating.NEUTRAL, choices=Rating.choices)
     description = models.CharField(max_length=512, blank=True)
-    image = models.ImageField()
+    image = models.ImageField(upload_to='users/%Y/%m/%d/', blank=True)
