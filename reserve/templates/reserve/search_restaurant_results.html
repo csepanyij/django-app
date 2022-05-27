@@ -1,0 +1,15 @@
+{% extends 'reserve/base.html' %}
+
+{% block content %}
+    <ul>
+        {% for restaurant in restaurants %}
+            <li>{{ restaurant.name }}</li>
+            <ul>
+                <li>Description: {{ restaurant.description }}</li>
+                <li>Address: {{ restaurant.address }}</li>
+                <li>Rating: {{ restaurant.rating }}</li>
+                <li>Image: {{ restaurant.image }}</li>
+            </ul>
+        {% endfor %}
+    </ul>
+{% endblock content %}
