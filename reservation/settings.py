@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'reserve',
     'bootstrap4',
     'django_static_fontawesome',
+    # 'betterforms',
     # 'address',
 ]
 

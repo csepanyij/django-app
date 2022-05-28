@@ -1,0 +1,19 @@
+{% extends 'reserve/base.html' %}
+
+{% load bootstrap4 %}
+
+{# Load CSS and JavaScript #}
+{% bootstrap_css %}
+{% bootstrap_javascript jquery='full' %}
+
+{# Display django.contrib.messages as Bootstrap alerts #}
+{% bootstrap_messages %}
+
+{% block content %}
+<ul>
+    <li>Name: {{ restaurant.name }}</li>
+    <li>Description: {{ restaurant.description }}</li>
+    <li>Rating: {{ restaurant.description }}</li>
+    <li>Opening hours: ...</li>
+</ul>
+{% endblock content %}
