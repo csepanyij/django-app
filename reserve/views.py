@@ -72,6 +72,5 @@ class RestaurantDetailView(GenericReservationView, DetailView):
 
     def get_queryset(self):
         print(self.kwargs['pk'])
-        messages.add_message(self.request, messages.INFO, 'Test message.')
         return Restaurant.objects.filter(pk=self.kwargs['pk'])
 
