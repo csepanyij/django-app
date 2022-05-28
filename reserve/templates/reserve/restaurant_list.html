@@ -4,9 +4,9 @@
 
 {% block content %}
     {% if restaurants %}
-    <div class="card-deck">
+    <div class="card-columns">
         {% for restaurant in restaurants %}
-        <div class="card">
+        <div class="card mb-3">
             <img src="{{ media_url }}{{ restaurant.image }}" alt="{{ restaurant.name }} picture" class="card-img-top card-thumbnail">
             <div class="card-body">
                 <h5 class="card-title"><a href="{% url 'restaurant_detail' restaurant.pk %}">{{ restaurant.name }}</a></h5>
