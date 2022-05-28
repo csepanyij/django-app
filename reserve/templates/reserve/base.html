@@ -1,3 +1,12 @@
+{% load bootstrap4 %}
+
+{# Load CSS and JavaScript #}
+{% bootstrap_css %}
+{% bootstrap_javascript jquery='full' %}
+
+{# Display django.contrib.messages as Bootstrap alerts #}
+{% bootstrap_messages %}
+
 <html>
     <head>
         <style>
@@ -9,10 +18,12 @@
         </style>
     </head>
     <body>
-        <div><a href="/create_restaurant/">Upload a new restaurant</a></div>
-        <div>
-            {% block content %}
-            {% endblock %}
+        {% include "reserve/navbar.html" %}
+        <div class="container">
+            <div>
+                {% block content %}
+                {% endblock %}
+            </div>
         </div>
     </body>
 </html>
