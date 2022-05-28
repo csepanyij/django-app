@@ -11,17 +11,27 @@
 
 {% block content %}
     {% if restaurants %}
-    <ul>
+    <div class="card-deck">
         {% for restaurant in restaurants %}
-        <li>{{ restaurant.name }}</li>
-        <ul>
-            <li>Description: {{ restaurant.description }}</li>
-            <li>Address: {{ restaurant.address }}</li>
-            <li>Rating: {{ restaurant.rating }}</li>
-            <li>Image: <img src="{{ media_url }}{{ restaurant.image }}"></li>
-        </ul>
+        <div class="card">
+            <img src="{{ media_url }}{{ restaurant.image }}" alt="{{ restaurant.name }} picture" class="card-img-top card-thumbnail">
+            <div class="card-body">
+                <h5 class="card-title">{{ restaurant.name }}</h5>
+                <p class="card-text">{{ restaurant.description }}</p>
+            </div>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item">Address: {{ restaurant.address }}</li>
+                <li class="list-group-item">Opening hours: ...</li>
+                <li class="list-group-item">Rating: {{ restaurant.rating }}</li>
+            </ul>
+            <div class="card-body">
+                {% buttons %}
+                    <a href="#" class="btn btn-primary">Reserve seat</a>
+                {% endbuttons %}
+            </div>
+        </div>
         {% endfor %}
-    </ul>
+    </div>
     {% else %}
     <p>No results found for '{{ search_term }}'</p>
     {% endif %}

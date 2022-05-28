@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'reserve',
     'bootstrap4',
+    'django_static_fontawesome',
     # 'address',
 ]
 
