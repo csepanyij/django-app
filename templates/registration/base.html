@@ -1,0 +1,23 @@
+{% load bootstrap4 %}
+{% load static %}
+
+{# Load CSS and JavaScript #}
+{% bootstrap_css %}
+{% bootstrap_javascript jquery='full' %}
+
+{# Display django.contrib.messages as Bootstrap alerts {% bootstrap_messages %} #}
+
+<html>
+<head>
+    <title>{% block title %}{% endblock title %}</title>
+    <link rel="stylesheet" type="text/css" href="{% static "fontawesome/css/all.min.css" %}" />
+</head>
+<body>
+    <div class="container">
+        <div>
+            {% block content %}
+            {% endblock content %}
+        </div>
+    </div>
+</body>
+</html>

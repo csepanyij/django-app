@@ -9,6 +9,7 @@
 
 <html>
     <head>
+        <title>{% block title %} {% endblock title %}</title>
         <style>
             .card-thumbnail {
                 object-fit: none; /* Do not scale the image */
@@ -33,7 +34,7 @@
         <div class="container">
             <div>
                 {% block content %}
-                {% endblock %}
+                {% endblock content %}
             </div>
         </div>
     </body>

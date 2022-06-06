@@ -1,0 +1,18 @@
+{% extends 'registration/base.html' %}
+
+{% load bootstrap4 %}
+
+{% block title %}Reservation: Login{% endblock title %}
+
+{% block content %}
+
+<h2>Log In</h2>
+<form method="post">
+    {% csrf_token %}
+    {% bootstrap_form form %}
+    {% buttons %}
+        <button type="submit" class="btn btn-primary">Log in</button>
+    {% endbuttons %}
+</form>
+
+{% endblock content %}
