@@ -2,17 +2,16 @@
 
 {% load bootstrap4 %}
 
-{% block title %}Reservation: Login{% endblock title %}
+{% block title %}Reservation: Log out{% endblock title %}
 
 {% block content %}
 
-<h2>Log In</h2>
+<h2>Log out</h2>
 <form method="post">
     {% csrf_token %}
     {% bootstrap_form form %}
     {% buttons %}
         <button type="submit" class="btn btn-primary">Log in</button>
-        <a href="{% url '' %}"></a>
     {% endbuttons %}
 </form>
 
